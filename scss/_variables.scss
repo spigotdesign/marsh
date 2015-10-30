@@ -1,0 +1,93 @@
+/*
+ * Variables
+ *
+ * @package   Sass Stylesheet
+ * @version   1.0
+ *
+ */
+
+
+
+// Grays
+$black:                 #292929;
+$white:                 #fafafa;
+
+// Unused
+$grayDarker:            #23282d;
+$grayDark:              #666666;
+$gray:                  #a7a9ac;
+$grayLight:             #dfdfdf;
+$grayLighter:           #f3f3f3;
+
+
+
+// Accent colors
+$blue:                  #049cdb;
+$orange:				#f58220;
+$red:					#c0392b;
+
+
+
+// Scaffolding
+$bodyBackground:        white;
+$textColor:             $black;
+
+// Mobile Nav
+$mobileNavWidth:        960;
+
+
+// Links
+$linkColor:             $blue;
+$linkColorHover:        darken($linkColor, 15%);
+
+// Borders
+$borderColor:			$grayLight;
+
+// Tooltips
+$toolTipColor:			$grayDarker;
+$toolTipTextColor:		$white;
+
+
+// Typography
+
+$sansFontFamily:		"Open Sans", Helvetica, sans-serif;
+$serifFontFamily:		Helvetica, serif;
+$monoFontFamily:        Menlo, Monaco, Consolas, "Courier New", monospace;
+$iconFontFamily:        "icomoon";
+
+$baseFontFamily:		$sansFontFamily;
+$baseFontSize:			16px;
+$baseFontStyle:			normal;
+
+$boldFontWeight:		700;
+$midFontWeight:			600;
+$regFontWeight:			400;
+$lightFontWeight:		300;
+
+// Headings
+$headingsFontFamily:    $sansFontFamily;
+$headingsFontWeight:    lighter;
+$headingsColor:         $black;
+
+// Navigation
+$primaryNavFontFamily:  $sansFontFamily;
+$primaryNavFontWeight:  300;
+$primaryNavFontStyle:   normal;
+
+
+
+// Forms
+$inputBackground:        $white;
+$inputBorder:            #ccc;
+$inputBorderRadius:      3px;
+
+
+// CONTAINER
+$containerWidth:          1200px;
+
+
+// Alignment
+
+$floatMarginLeft:         20px;
+$floatMarginRight:        20px;
+$floatMarginBottom:       24px;

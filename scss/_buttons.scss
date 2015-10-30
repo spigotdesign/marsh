@@ -1,0 +1,81 @@
+/*
+ * Buttons
+ *
+ * @package   Sass Stylesheet
+ * @version   1.0
+ *
+ */
+
+.button, .btn, input.submit {
+  display: inline-block;
+  text-transform: uppercase;
+  padding: .375em 1em;
+  border: 1px solid $orange;
+  border-radius: 3px;
+  color: $grayDark;
+  // background-color: $orange;
+  font-family: $sansFontFamily;
+  font-weight: bold;
+  font-size: 14px;
+  font-size: .875rem;
+  text-align: center;
+  @include transition(all .2s ease-in-out);
+
+  &:hover {
+    background-color: $orange;
+    color: $white;
+
+  }
+
+}
+
+.btn.white, .button.white {
+  @extend .button;
+  background-color: transparent;
+  border-color: $white;
+  color: $white;
+
+  &:hover {
+    background-color: $orange;
+    border-color: $orange;
+    color: $white;
+  }
+}
+
+.btn.orange, .button.orange {
+  @extend .button;
+  background-color: $orange;
+  border-color: $orange;
+  color: $white;
+
+  &:hover {
+    background-color: $grayDarker;
+    border-color: $grayDarker;
+    color: $white;
+  }
+}
+
+
+// Comment Form Submit
+
+input#submit, .gform_button {
+  @extend .btn;
+  background-color: $orange;
+  color: $white;
+  border-color: darken($orange, 5%);
+  margin: 1em 0;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($orange, 7%);
+    border-color: darken($orange, 15%)
+  }
+  
+}
+
+.button.primary-button {
+  font-size: 20px;
+
+  
+}
+

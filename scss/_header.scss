@@ -1,0 +1,44 @@
+/*
+ * Header
+ *
+ * @package   Sass Stylesheet
+ * @version   1.0
+ *
+ */
+
+// Header
+.site-header {
+    background: $grayDarker;
+    position: relative;
+    width: 100%;
+    padding: 21px 0;
+    z-index: 1000;
+    //height: 90px;
+
+    .contain {
+        display: flex;
+    }
+
+    .admin-bar & {
+        border-top: 1px solid lighten($grayDarker, 2%);
+    }
+}
+
+
+.site-title {
+    margin: 0;
+
+    a {
+        
+        @include hide-text;
+        display: block;
+        background: url(img/icons/rwc-logo.svg) center center no-repeat;
+        background-size: 200px 47px;
+        width: 200px;
+        height: 47px;
+        position: relative;
+        margin: 0;
+        z-index: 1000;
+    
+    }
+}

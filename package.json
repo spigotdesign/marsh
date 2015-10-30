@@ -1,0 +1,23 @@
+{
+  "name": "Marsh",
+  "description": "A simple, repsonsive theme for WordPress. Built on Hybrid Core.",
+  "version": "1.0.0",
+  "author": "Spigot",
+  "license": "GNU General Public License v2.0 or later",
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-ruby-sass": "*",
+    "gulp-livereload": "*",
+    "gulp-plumber": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-minify-css": "*",
+    "gulp-rename": "*",
+    "gulp-concat": "*",
+    "gulp-uglify": "*",
+    "gulp-notify": "*",
+    "gulp-imagemin": "*",
+    "imagemin-pngquant": "*",
+    "gulp-strip-debug": "*",
+    "gulp-sourcemaps": "*"
+  }
+}

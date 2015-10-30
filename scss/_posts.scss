@@ -1,0 +1,19 @@
+/*
+ * Posts
+ *
+ * @package   Sass Stylesheet
+ * @version   1.0
+ *
+ */
+
+
+.entry-byline {
+	@include font_size(13px);
+}
+
+.entry-footer {
+	@include font_size(13px);
+	padding: 10px 0;
+	border-top: 1px solid $borderColor;
+	border-bottom: 1px solid $borderColor;
+}

@@ -1,0 +1,34 @@
+/*
+ * Pages
+ *
+ * @package   Sass Stylesheet
+ * @version   1.0
+ *
+ */
+
+
+.page-header {
+	height: 25vh;
+	display: flex;
+	background-size: cover;
+	background-position: center center;
+	align-items: center;
+	justify-content: center;
+	flex-flow: column wrap;
+
+	h1 {
+		color: $white;
+		text-shadow: 0 0 15px rgba($black, .5);
+		text-align: center;
+	}
+
+	p {
+		color: $white;
+		text-shadow: 0 0 15px rgba($black, .5);
+		text-align: center
+	}
+}
+
+.entry-content {
+	padding-top: 30px;
+}

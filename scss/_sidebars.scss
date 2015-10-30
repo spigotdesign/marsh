@@ -1,0 +1,46 @@
+/*
+ * Sidebars
+ *
+ * @package   Sass Stylesheet
+ * @version   1.0
+ *
+ */
+
+.sidebar-primary {
+    @include mq($mobileNavWidth) {
+        padding-top: 30px;
+        border-left: 1px solid lighten($grayDarker, 70%);
+        padding-left: 2vh;
+    }
+
+
+    .widget {
+        padding: 20px 0;
+
+        &.widget_search {
+            padding: 0;
+        }
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .button.orange {
+    	display: block;
+    }
+}
+
+h3.widget-title {
+    @include font_size(13px);
+
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+
+    .no-title & {
+    	display: none;
+    }
+}

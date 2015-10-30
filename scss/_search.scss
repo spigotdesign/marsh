@@ -1,0 +1,47 @@
+/*
+ * Search
+ *
+ * @package   Sass Stylesheet
+ * @version   1.0
+ *
+ */
+
+.search-form {
+    position: relative;
+    z-index: 100;
+    //margin-left: 1em;
+    @include placeholder {
+        color: $textColor;
+        
+        
+    }
+
+    label {
+        color: $textColor;
+    }
+    input[type="submit"] {
+        display: none;
+    }
+    input[type="search"] {
+        font-family: $serifFontFamily;
+        font-weight: normal;
+        font-size: 12px;
+        text-transform: uppercase;
+        width: 95%;
+        border: none;
+        padding: .5em 0 .5em 2em;
+        background: transparent url(img/icons/search.svg) 0 50% no-repeat;
+        background-size: 15px 15px;
+        color: $textColor;
+    }
+    input[type="search"]:focus {
+        outline: none;
+        background-color: transparent;
+        background: transparent url(img/icons/search.svg) 0 50% no-repeat;
+        box-shadow: none;
+        color: $textColor;
+        font-weight: normal;
+        background-size: 15px 15px;
+        //padding: .5em 0 .5em 1.5em;
+    }
+}
