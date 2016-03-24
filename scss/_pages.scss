@@ -6,6 +6,35 @@
  *
  */
 
+.page-marquee {
+
+	background-size: cover;
+	height: 30vh;
+	background-position: center center;
+	padding-top: 8vh;
+	display: flex;
+	align-items: center;
+
+	h1, h2, h3, h4 {
+		color: $white;
+		text-shadow: 0 0 12px rgba($black, .8);
+		text-align: center;
+		margin: 0 0 15px 0;
+	}
+
+	h2 {
+		font-family: $sansFontFamily;
+		@include font_size(26px);
+		text-transform: uppercase;
+		font-weight: normal;
+	}
+
+	.home & {
+		height: 45vh;
+	}
+
+}
+
 
 .page-header {
 	height: 25vh;
@@ -31,4 +60,11 @@
 
 .entry-content {
 	padding-top: 30px;
+}
+
+.error-404 {
+
+	.content {
+		padding-top: 120px;
+	}
 }

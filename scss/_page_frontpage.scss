@@ -6,25 +6,3 @@
  *
  */
 
-.marquee {
-
-	background-size: cover;
-	height: 85vh;
-	background-position: center center;
-	padding-top: 10vh;
-	color: $white;
-
-	h2, h3, h4 {
-		color: $white;
-		text-shadow: 0 0 10px rgba($black, .5);
-		text-align: center;
-	}
-
-
-	.contain {
-		display: flex;
-		flex-flow: column wrap;
-		align-items: center;
-		justify-content: center;
-	}
-}

@@ -1,11 +1,11 @@
 /*!
- Theme Name:    Melange
+ Theme Name:    Marsh
  Theme URI:    	http://spigotdesign.com/
  Author:        Spigot
  Author URI:    http://spigotdesign.com/
  Description:   Description: A custom theme built on the rock-solid Hybrid Core theme framework. It's built with search-engine optimization (SEO) in mind by utilizing the most current HTML5 conventions and <a href="http://schema.org">Schema.org</a> microdata.
- Version:       2.2
- Text Domain: 	melange
+ Version:       1.0
+ Text Domain: 	marsh
  License:     	GNU General Public License v2.0 or later
  License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -493,8 +493,8 @@ body {
   position: relative;
 }
 
-/* line 55, scss/_scaffolding.scss */
-.layout-2c-l .page-contents {
+/* line 54, scss/_scaffolding.scss */
+.page-contents {
   padding: 0 2%;
   -webkit-flex-flow: row nowrap;
   -ms-flex-flow: row nowrap;
@@ -506,27 +506,27 @@ body {
   margin: 0 auto;
 }
 @media (min-width: 70em) {
-  /* line 55, scss/_scaffolding.scss */
-  .layout-2c-l .page-contents {
+  /* line 54, scss/_scaffolding.scss */
+  .page-contents {
     padding: 0;
   }
 }
 @media (min-width: 60em) {
-  /* line 55, scss/_scaffolding.scss */
-  .layout-2c-l .page-contents {
+  /* line 54, scss/_scaffolding.scss */
+  .page-contents {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
   }
 }
 /* line 72, scss/_scaffolding.scss */
-.layout-2c-l .page-contents .entry, .layout-2c-l .page-contents .posts, .layout-2c-l .page-contents .post-group {
+.page-contents .entry, .page-contents .posts, .page-contents .post-group {
   -webkit-flex: 0 1 65%;
   -ms-flex: 0 1 65%;
   flex: 0 1 65%;
 }
 /* line 76, scss/_scaffolding.scss */
-.layout-2c-l .page-contents .sidebar-primary {
+.page-contents .sidebar-primary {
   -webkit-flex: 0 1 30%;
   -ms-flex: 0 1 30%;
   flex: 0 1 30%;
@@ -552,10 +552,9 @@ body {
  */
 /* line 10, scss/_header.scss */
 .site-header {
-  background: #23282d;
-  position: relative;
+  background: transparent;
+  position: absolute;
   width: 100%;
-  padding: 21px 0;
   z-index: 1000;
 }
 /* line 18, scss/_header.scss */
@@ -568,12 +567,27 @@ body {
 .admin-bar .site-header {
   border-top: 1px solid #272d33;
 }
+@media (min-width: 60em) {
+  /* line 10, scss/_header.scss */
+  .site-header {
+    padding: 21px 0;
+  }
+}
 
-/* line 28, scss/_header.scss */
+/* line 31, scss/_header.scss */
+.branding {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1em;
+  max-width: 1200px;
+  position: relative;
+}
+
+/* line 40, scss/_header.scss */
 .site-title {
   margin: 0;
 }
-/* line 31, scss/_header.scss */
+/* line 43, scss/_header.scss */
 .site-title a {
   font: 0/0 a;
   color: transparent;
@@ -581,13 +595,21 @@ body {
   background-color: transparent;
   border: 0;
   display: block;
-  background: url(img/icons/rwc-logo.svg) center center no-repeat;
-  background-size: 200px 47px;
-  width: 200px;
-  height: 47px;
+  background: url(img/icons/marsh-painting.svg) center center no-repeat;
+  background-size: 90px 72px;
+  width: 150px;
+  height: 120px;
   position: relative;
   margin: 0;
   z-index: 1000;
+}
+@media (min-width: 40em) {
+  /* line 43, scss/_header.scss */
+  .site-title a {
+    background-size: 150px 120px;
+    width: 150px;
+    height: 120px;
+  }
 }
 
 /*
@@ -604,134 +626,133 @@ body {
   visibility: hidden;
   width: 100%;
   right: 0;
-  top: 5.25em;
+  top: 0;
+  padding-top: 8em;
+  padding-bottom: 2em;
   margin-bottom: 2em;
-  background: #666666;
+  background: rgba(41, 41, 41, 0.9);
   font-family: "Open Sans", Helvetica, sans-serif;
   transition: all 0.3s ease-in-out;
 }
 @media (min-width: 60em) {
   /* line 9, scss/_navigation.scss */
   .menu-primary {
-    position: relative;
+    position: absolute;
     margin: 0;
-    background: transparent;
+    background: rgba(20, 19, 19, 0.63);
     text-align: right;
     opacity: 1;
     visibility: visible;
-    top: 1em;
+    top: 3.5em;
+    padding: .25em;
   }
 }
-/* line 34, scss/_navigation.scss */
+/* line 37, scss/_navigation.scss */
 .open .menu-primary {
   opacity: 1;
   width: 100%;
   overflow: hidden;
   visibility: visible;
+  text-align: center;
 }
-@media (min-width: 30em) {
-  /* line 34, scss/_navigation.scss */
-  .open .menu-primary {
-    top: 5.25em;
-  }
-}
-/* line 45, scss/_navigation.scss */
+/* line 47, scss/_navigation.scss */
 .menu-primary ul {
   position: relative;
   margin: 0;
   padding: 0;
   list-style: none;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-/* line 51, scss/_navigation.scss */
+/* line 56, scss/_navigation.scss */
 .menu-primary ul li {
   padding: 0;
   margin: 0;
-  font-size: 14px;
-  font-size: .875rem;
+  font-size: 16px;
+  font-size: 1rem;
   position: relative;
   text-transform: uppercase;
 }
 @media (min-width: 60em) {
-  /* line 51, scss/_navigation.scss */
+  /* line 56, scss/_navigation.scss */
   .menu-primary ul li {
-    padding-bottom: 1em;
     display: inline-block;
   }
 }
-/* line 65, scss/_navigation.scss */
+/* line 69, scss/_navigation.scss */
 .menu-primary ul li:hover {
   visibility: inherit;
 }
-/* line 69, scss/_navigation.scss */
+/* line 73, scss/_navigation.scss */
 .menu-primary ul li:hover > ul {
   z-index: 99;
   visibility: visible;
   opacity: 1;
 }
 @media (min-width: 60em) {
-  /* line 69, scss/_navigation.scss */
+  /* line 73, scss/_navigation.scss */
   .menu-primary ul li:hover > ul {
     left: .25em;
     top: 2em;
   }
 }
 @media (min-width: 60em) {
-  /* line 81, scss/_navigation.scss */
+  /* line 85, scss/_navigation.scss */
   .menu-primary ul li:hover > ul ul {
     left: 100%;
     top: 0;
   }
 }
-/* line 90, scss/_navigation.scss */
+/* line 94, scss/_navigation.scss */
 .menu-primary ul li a {
   color: #fafafa;
   display: block;
   padding: .5em 1em;
 }
-/* line 95, scss/_navigation.scss */
+/* line 99, scss/_navigation.scss */
 .menu-primary ul li a:hover {
   background-color: #f58220;
 }
 @media (min-width: 60em) {
-  /* line 95, scss/_navigation.scss */
+  /* line 99, scss/_navigation.scss */
   .menu-primary ul li a:hover {
     color: #f58220;
     background-color: transparent;
   }
 }
 @media (min-width: 60em) {
-  /* line 90, scss/_navigation.scss */
+  /* line 94, scss/_navigation.scss */
   .menu-primary ul li a {
     color: #fafafa;
     display: inline-block;
-    padding: 0 .5em;
+    padding: .5em;
   }
 }
-/* line 111, scss/_navigation.scss */
+/* line 115, scss/_navigation.scss */
 .menu-primary ul li.current_page_item > a {
   background-color: #f58220;
 }
 @media (min-width: 60em) {
-  /* line 111, scss/_navigation.scss */
+  /* line 115, scss/_navigation.scss */
   .menu-primary ul li.current_page_item > a {
     color: #f58220;
     background-color: transparent;
   }
 }
 @media (min-width: 60em) {
-  /* line 120, scss/_navigation.scss */
+  /* line 124, scss/_navigation.scss */
   .menu-primary ul li.current-menu-ancestor a {
     color: #f58220;
   }
 }
-/* line 129, scss/_navigation.scss */
+/* line 133, scss/_navigation.scss */
 .menu-primary ul.sub-menu {
   position: relative;
   text-align: left;
   padding-top: 0;
 }
 @media (min-width: 60em) {
-  /* line 129, scss/_navigation.scss */
+  /* line 133, scss/_navigation.scss */
   .menu-primary ul.sub-menu {
     position: absolute;
     top: -999em;
@@ -742,45 +763,45 @@ body {
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.35);
   }
 }
-/* line 145, scss/_navigation.scss */
+/* line 149, scss/_navigation.scss */
 .menu-primary ul.sub-menu li {
   width: 100%;
   margin: 0;
   line-height: 1.3;
 }
 @media (min-width: 60em) {
-  /* line 145, scss/_navigation.scss */
+  /* line 149, scss/_navigation.scss */
   .menu-primary ul.sub-menu li {
     padding: 0;
   }
 }
-/* line 155, scss/_navigation.scss */
+/* line 159, scss/_navigation.scss */
 .menu-primary ul.sub-menu li a {
   display: block;
   padding: .5em 1.5em;
 }
 @media (min-width: 60em) {
-  /* line 155, scss/_navigation.scss */
+  /* line 159, scss/_navigation.scss */
   .menu-primary ul.sub-menu li a {
     padding-left: .5em;
     color: #f58220;
   }
 }
-/* line 165, scss/_navigation.scss */
+/* line 169, scss/_navigation.scss */
 .menu-primary ul.sub-menu li a:hover, .menu-primary ul.sub-menu li.current-menu-item a {
   background: #f58220;
   color: #fafafa;
 }
-/* line 172, scss/_navigation.scss */
+/* line 176, scss/_navigation.scss */
 .menu-primary ul.sub-menu ul {
   left: 0;
 }
-/* line 175, scss/_navigation.scss */
+/* line 179, scss/_navigation.scss */
 .menu-primary ul.sub-menu ul li a {
   padding-left: 30px;
 }
 @media (min-width: 60em) {
-  /* line 175, scss/_navigation.scss */
+  /* line 179, scss/_navigation.scss */
   .menu-primary ul.sub-menu ul li a {
     padding-left: 10px;
   }
@@ -896,7 +917,40 @@ body {
  * @version   1.0
  *
  */
-/* line 10, scss/_pages.scss */
+/* line 9, scss/_pages.scss */
+.page-marquee {
+  background-size: cover;
+  height: 30vh;
+  background-position: center center;
+  padding-top: 8vh;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+/* line 18, scss/_pages.scss */
+.page-marquee h1, .page-marquee h2, .page-marquee h3, .page-marquee h4 {
+  color: #fafafa;
+  text-shadow: 0 0 12px rgba(41, 41, 41, 0.8);
+  text-align: center;
+  margin: 0 0 15px 0;
+}
+/* line 25, scss/_pages.scss */
+.page-marquee h2 {
+  font-family: "Open Sans", Helvetica, sans-serif;
+  font-size: 26px;
+  font-size: 1.625rem;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+/* line 32, scss/_pages.scss */
+.home .page-marquee {
+  height: 45vh;
+}
+
+/* line 39, scss/_pages.scss */
 .page-header {
   height: 25vh;
   display: -webkit-flex;
@@ -914,22 +968,27 @@ body {
   -ms-flex-flow: column wrap;
   flex-flow: column wrap;
 }
-/* line 19, scss/_pages.scss */
+/* line 48, scss/_pages.scss */
 .page-header h1 {
   color: #fafafa;
   text-shadow: 0 0 15px rgba(41, 41, 41, 0.5);
   text-align: center;
 }
-/* line 25, scss/_pages.scss */
+/* line 54, scss/_pages.scss */
 .page-header p {
   color: #fafafa;
   text-shadow: 0 0 15px rgba(41, 41, 41, 0.5);
   text-align: center;
 }
 
-/* line 32, scss/_pages.scss */
+/* line 61, scss/_pages.scss */
 .entry-content {
   padding-top: 30px;
+}
+
+/* line 67, scss/_pages.scss */
+.error-404 .content {
+  padding-top: 120px;
 }
 
 /*
@@ -939,36 +998,6 @@ body {
  * @version   1.0
  *
  */
-/* line 9, scss/_page_frontpage.scss */
-.marquee {
-  background-size: cover;
-  height: 85vh;
-  background-position: center center;
-  padding-top: 10vh;
-  color: #fafafa;
-}
-/* line 17, scss/_page_frontpage.scss */
-.marquee h2, .marquee h3, .marquee h4 {
-  color: #fafafa;
-  text-shadow: 0 0 10px rgba(41, 41, 41, 0.5);
-  text-align: center;
-}
-/* line 24, scss/_page_frontpage.scss */
-.marquee .contain {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: column wrap;
-  -ms-flex-flow: column wrap;
-  flex-flow: column wrap;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
 /*
  * Posts
  *
@@ -1221,7 +1250,7 @@ h3.widget-title {
 }
 /* line 25, scss/_search.scss */
 .search-form input[type="search"] {
-  font-family: Helvetica, serif;
+  font-family: "Merriweather", serif;
   font-weight: normal;
   font-size: 12px;
   text-transform: uppercase;
@@ -1260,7 +1289,7 @@ p {
 
 /* line 18, scss/_type.scss */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Open Sans", Helvetica, sans-serif;
+  font-family: "Merriweather", serif;
   font-weight: lighter;
   color: #292929;
   text-rendering: optimizelegibility;
@@ -1431,6 +1460,18 @@ sup, sub {
 /* line 183, scss/_type.scss */
 sub {
   top: 0.4em;
+}
+
+/* line 186, scss/_type.scss */
+dl dt {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 110%;
+}
+/* line 193, scss/_type.scss */
+dl dd {
+  margin-left: 20px;
+  margin-bottom: 24px;
 }
 
 /*
@@ -1657,462 +1698,6 @@ select[size] {
 .checkbox input[type="checkbox"] {
   float: left;
   margin-left: -18px;
-}
-
-/* line 164, scss/_forms.scss */
-.gform_wrapper .top_label .no-title .gfield_label {
-  display: none;
-}
-
-/* line 167, scss/_forms.scss */
-.entry-content .gform_fields {
-  padding-left: 0;
-}
-
-/* line 171, scss/_forms.scss */
-.gform_wrapper {
-  overflow: inherit;
-  margin: 10px 0;
-  max-width: 98%;
-}
-
-/* line 177, scss/_forms.scss */
-.gform_wrapper ul {
-  margin: 0;
-  list-style-type: none;
-}
-
-/* line 182, scss/_forms.scss */
-.gform_wrapper li,
-.gform_wrapper form li {
-  list-style-type: none !important;
-  list-style-image: none !important;
-  list-style: none !important;
-  overflow: visible;
-}
-
-/* line 189, scss/_forms.scss */
-.gform_wrapper ul li.gfield {
-  clear: both;
-}
-
-/* line 194, scss/_forms.scss */
-.gform_wrapper .gform_heading {
-  width: 98%;
-}
-
-/* line 201, scss/_forms.scss */
-.gform_wrapper .ginput_complex .ginput_left {
-  width: 50%;
-  float: left;
-}
-
-/* line 205, scss/_forms.scss */
-.gform_wrapper .ginput_complex .ginput_right {
-  width: 49%;
-  float: right;
-}
-
-/* line 209, scss/_forms.scss */
-.gform_wrapper .gfield_error .ginput_complex .ginput_left,
-.gform_wrapper .gfield_error .ginput_complex .ginput_right {
-  width: 50%;
-}
-
-/* line 213, scss/_forms.scss */
-.gform_wrapper .gfield_error .ginput_complex .ginput_left input {
-  width: 90% !important;
-}
-
-/* line 216, scss/_forms.scss */
-.gform_wrapper .gfield_error .ginput_complex .ginput_right input {
-  width: 93% !important;
-}
-
-/* line 219, scss/_forms.scss */
-.gform_wrapper .ginput_complex input,
-.gform_wrapper .ginput_complex select {
-  width: 95% !important;
-}
-
-/* line 223, scss/_forms.scss */
-.gform_wrapper .ginput_complex .ginput_right input,
-.gform_wrapper .ginput_complex .ginput_right select {
-  width: 96% !important;
-}
-
-/* line 228, scss/_forms.scss */
-.gform_wrapper .ginput_complex .name_prefix {
-  float: left;
-  width: 30px !important;
-  margin-right: 14px;
-}
-
-/* line 233, scss/_forms.scss */
-.gform_wrapper .ginput_complex .name_suffix {
-  float: left;
-  width: 30px !important;
-}
-
-/* line 237, scss/_forms.scss */
-.gform_wrapper .ginput_complex .name_first,
-.gform_wrapper .ginput_complex .name_last {
-  float: left;
-  width: 100px;
-  margin-right: 8px;
-}
-
-/* line 243, scss/_forms.scss */
-.gform_wrapper .top_label .gfield_label {
-  margin: 10px 0 4px 0;
-  font-weight: bold;
-  display: -moz-inline-stack;
-  display: inline-block;
-  line-height: 1.3em;
-  clear: both;
-}
-
-/* line 251, scss/_forms.scss */
-.gform_wrapper .left_label .gfield_label {
-  float: left;
-  margin: 0 15px 0 0;
-  width: 29%;
-  font-weight: bold;
-}
-
-/* line 257, scss/_forms.scss */
-.gform_wrapper .right_label .gfield_label {
-  float: left;
-  margin: 0 15px 0 0;
-  width: 29%;
-  font-weight: bold;
-  text-align: right;
-}
-
-/* line 264, scss/_forms.scss */
-.gform_wrapper .left_label ul.gfield_checkbox,
-.gform_wrapper .right_label ul.gfield_checkbox,
-.gform_wrapper .left_label ul.gfield_radio,
-.gform_wrapper .right_label ul.gfield_radio {
-  margin-left: 32%;
-  overflow: hidden;
-}
-
-/* line 271, scss/_forms.scss */
-.gform_wrapper .top_label input.small,
-.gform_wrapper .top_label select.small {
-  width: 25%;
-}
-
-/* line 275, scss/_forms.scss */
-.gform_wrapper .top_label input.medium,
-.gform_wrapper .top_label select.medium {
-  width: 47%;
-}
-
-/* line 279, scss/_forms.scss */
-.gform_wrapper .top_label input.medium {
-  padding-right: 2px;
-}
-
-/* line 282, scss/_forms.scss */
-.gform_wrapper .top_label input.large,
-.gform_wrapper .top_label select.large,
-.gform_wrapper .top_label textarea.textarea {
-  width: 99.2%;
-}
-
-/* line 287, scss/_forms.scss */
-.gform_wrapper .right_label input.small,
-.gform_wrapper .right_label select.small,
-.gform_wrapper .left_label input.small,
-.gform_wrapper .left_label select.small {
-  width: 15%;
-}
-
-/* line 293, scss/_forms.scss */
-.gform_wrapper .right_label input.medium,
-.gform_wrapper .right_label select.medium,
-.gform_wrapper .left_label input.medium,
-.gform_wrapper .left_label select.medium {
-  width: 35%;
-}
-
-/* line 299, scss/_forms.scss */
-.gform_wrapper .right_label input.large,
-.gform_wrapper .right_label select.large,
-.gform_wrapper .left_label input.large,
-.gform_wrapper .left_label select.large,
-.gform_wrapper textarea.textarea {
-  width: 63%;
-}
-
-/* line 306, scss/_forms.scss */
-.gform_wrapper .right_label div.ginput_complex,
-.gform_wrapper .left_label div.ginput_complex {
-  width: 64%;
-}
-
-/* line 310, scss/_forms.scss */
-.gform_wrapper h2.gsection_title {
-  margin: 0 !important;
-  padding: 0 !important;
-  letter-spacing: normal !important;
-}
-
-/* line 315, scss/_forms.scss */
-.gform_wrapper .gsection .gfield_label,
-.gform_wrapper h2.gsection_title,
-.gform_wrapper h3.gform_title {
-  font-weight: bold;
-  font-size: 1.3em;
-}
-
-/* line 321, scss/_forms.scss */
-.gform_wrapper h3.gform_title {
-  letter-spacing: normal !important;
-  margin: 10px 0 6px 0;
-}
-
-/* line 325, scss/_forms.scss */
-.gform_wrapper span.gform_description {
-  font-weight: normal;
-}
-
-/* line 328, scss/_forms.scss */
-.gform_wrapper h2.gsection_title,
-.gform_wrapper .gsection_description,
-.gform_wrapper h3.gform_title {
-  width: 98%;
-}
-
-/* line 333, scss/_forms.scss */
-.gform_wrapper .gsection {
-  border-bottom: 1px dotted #CCC;
-  padding: 0 0 8px 0;
-  margin: 16px 0;
-  clear: both;
-}
-
-/* line 339, scss/_forms.scss */
-.gform_wrapper ul.gfield_checkbox li input[type=checkbox],
-.gform_wrapper ul.gfield_radio li input[type=radio] {
-  width: auto !important;
-  position: relative;
-  top: 2px;
-}
-
-/* radio and checkbox styling - justifies lenghty labels ------------------------------------------------------*/
-/* line 348, scss/_forms.scss */
-.gform_wrapper .gfield_checkbox li,
-.gform_wrapper .gfield_radio li {
-  position: relative;
-}
-
-/* line 352, scss/_forms.scss */
-.gform_wrapper ul.gfield_checkbox,
-.gform_wrapper ul.gfield_radio {
-  margin: 6px 0;
-  padding: 0;
-}
-
-/* line 356, scss/_forms.scss */
-.gform_wrapper .gfield_checkbox li label,
-.gform_wrapper .gfield_radio li label {
-  display: block;
-  margin: 0 0 0 24px;
-  padding: 0;
-  width: auto;
-  line-height: 1.5;
-  vertical-align: top;
-}
-
-/* line 365, scss/_forms.scss */
-.gform_wrapper .gfield_checkbox li input[type=checkbox],
-.gform_wrapper .gfield_radio li input[type=radio],
-.gform_wrapper .gfield_checkbox li input {
-  float: left;
-  margin-top: 2px;
-}
-
-/* line 371, scss/_forms.scss */
-.gform_wrapper .description,
-.gform_wrapper .gfield_description,
-.gform_wrapper .gsection_description,
-.gform_wrapper .instruction {
-  font-size: 0.85em;
-  line-height: 1.5em;
-  clear: both;
-  font-family: sans-serif;
-  letter-spacing: normal;
-}
-
-/* line 381, scss/_forms.scss */
-.gform_wrapper .description,
-.gform_wrapper .gfield_description,
-.gform_wrapper .gsection_description {
-  padding: 4px 0 8px 0;
-}
-
-/* line 386, scss/_forms.scss */
-.gform_wrapper .gfield_description {
-  padding: 10px 0 0 0;
-  width: 99.8%;
-}
-
-/* line 390, scss/_forms.scss */
-.gform_wrapper .left_label .gfield_description,
-.gform_wrapper .right_label .gfield_description {
-  width: 63%;
-}
-
-/* line 394, scss/_forms.scss */
-.gform_wrapper .description_above .gfield_description {
-  padding: 0 0 10px 0;
-}
-
-/* line 397, scss/_forms.scss */
-.gfield_date_year + .gfield_description {
-  padding: 0;
-}
-
-/* line 400, scss/_forms.scss */
-.gform_wrapper .right_label .gfield_description,
-.gform_wrapper .left_label .gfield_description,
-.gform_wrapper .left_label .instruction,
-.gform_wrapper .right_label .instruction {
-  margin-left: 31%;
-}
-
-/* line 407, scss/_forms.scss */
-.gform_wrapper .gfield_required {
-  color: #790000;
-  margin-left: 4px;
-}
-
-/* line 411, scss/_forms.scss */
-.gform_wrapper textarea.small {
-  height: 80px;
-}
-
-/* line 414, scss/_forms.scss */
-.gform_wrapper textarea.medium {
-  height: 190px;
-}
-
-/* line 417, scss/_forms.scss */
-.gform_wrapper textarea.large {
-  height: 250px;
-}
-
-/* line 420, scss/_forms.scss */
-.gform_wrapper li.gfield.gfield_error {
-  background-color: #FFDFDF;
-  margin-bottom: 6px !important;
-  padding: 6px 6px 4px 6px !important;
-  border: 1px solid #C89797;
-}
-
-/* line 428, scss/_forms.scss */
-li.gfield + li.gfield.gfield_creditcard_warning {
-  margin-top: 14px !important;
-}
-
-/* line 431, scss/_forms.scss */
-.gform_wrapper li.gfield.gfield_error .gfield_description {
-  color: #790000;
-}
-
-/* line 434, scss/_forms.scss */
-.gform_wrapper .top_label .gfield_error .ginput_container {
-  max-width: 99%;
-}
-
-/* line 437, scss/_forms.scss */
-.gform_wrapper .top_label .gfield_error {
-  width: 97%;
-}
-
-/* line 440, scss/_forms.scss */
-.gform_wrapper .top_label .gfield_error input.large,
-.gform_wrapper .top_label .gfield_error select.large,
-.gform_wrapper .top_label .gfield_error textarea.textarea {
-  width: 100%;
-}
-
-/* line 445, scss/_forms.scss */
-.gform_wrapper .right_label .gfield_error input.large,
-.gform_wrapper .right_label .gfield_error select.large,
-.gform_wrapper .right_label .gfield_error textarea.textarea,
-.gform_wrapper .left_label .gfield_error input.large,
-.gform_wrapper .left_label .gfield_error select.large,
-.gform_wrapper .left_label .gfield_error textarea.textarea {
-  width: 66%;
-}
-
-/* line 453, scss/_forms.scss */
-.gform_wrapper .gfield_error .gfield_label {
-  color: #790000;
-}
-
-/* line 456, scss/_forms.scss */
-.gform_wrapper li.gfield.gfield_error.gfield_contains_required {
-  margin-top: 12px;
-  margin-bottom: 12px !important;
-}
-
-/* line 460, scss/_forms.scss */
-.gform_wrapper li.gfield.gfield_error.gfield_contains_required label.gfield_label,
-.gform_wrapper li.gfield.gfield_error.gfield_contains_required div.ginput_container {
-  margin-top: 12px;
-}
-
-/* line 464, scss/_forms.scss */
-.gform_wrapper .validation_error {
-  color: #790000;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 1.5em;
-  margin-bottom: 16px;
-}
-
-/* line 471, scss/_forms.scss */
-.gform_wrapper .validation_message {
-  color: #790000;
-  letter-spacing: normal;
-}
-
-/* line 475, scss/_forms.scss */
-.gform_wrapper .gform_footer {
-  padding: 16px 0 10px 0;
-  margin: 16px 0 0 0;
-  clear: both;
-}
-
-/* line 481, scss/_forms.scss */
-.gform_wrapper .ginput_complex .ginput_left,
-.gform_wrapper .ginput_complex .ginput_right,
-.gform_wrapper .ginput_complex .ginput_full {
-  min-height: 43px;
-  display: block;
-}
-
-/* line 487, scss/_forms.scss */
-.gform_wrapper .ginput_complex .ginput_full input {
-  width: 98% !important;
-}
-
-/* line 490, scss/_forms.scss */
-.gform_wrapper .gfield_checkbox li,
-.gform_wrapper .gfield_radio li {
-  margin: 0 0 8px 0;
-  line-height: 1.3em;
-}
-
-/* line 495, scss/_forms.scss */
-.gform_wrapper ul.gfield_radio li input[type="radio"]:checked + label,
-.gform_wrapper ul.gfield_checkbox li input[type="checkbox"]:checked + label {
-  font-weight: bold;
 }
 
 /*

@@ -2,7 +2,7 @@
 
 	<button class="toggle-menu" type="button" role="button" aria-label="Toggle Navigation">
     		
-		<span class="screen-reader-text"><?php _e( 'Navigation', 'melange' ); ?></span>
+		<span class="screen-reader-text"><?php _e( 'Navigation', 'marsh' ); ?></span>
 
 	</button>
 

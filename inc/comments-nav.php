@@ -2,16 +2,16 @@
 
 	<nav class="comments-nav" role="navigation" aria-labelledby="comments-nav-title">
 
-		<h3 id="comments-nav-title" class="screen-reader-text"><?php _e( 'Comments Navigation', 'melange' ); ?></h3>
+		<h3 id="comments-nav-title" class="screen-reader-text"><?php _e( 'Comments Navigation', 'marsh' ); ?></h3>
 
-		<?php previous_comments_link( _x( '&larr; Previous', 'comments navigation', 'melange' ) ); ?>
+		<?php previous_comments_link( _x( '&larr; Previous', 'comments navigation', 'marsh' ) ); ?>
 
 		<span class="page-numbers"><?php 
 			/* Translators: Comments page numbers. 1 is current page and 2 is total pages. */
-			printf( __( 'Page %1$s of %2$s', 'melange' ), get_query_var( 'cpage' ) ? absint( get_query_var( 'cpage' ) ) : 1, get_comment_pages_count() ); 
+			printf( __( 'Page %1$s of %2$s', 'marsh' ), get_query_var( 'cpage' ) ? absint( get_query_var( 'cpage' ) ) : 1, get_comment_pages_count() ); 
 		?></span>
 
-		<?php next_comments_link( _x( 'Next &rarr;', 'comments navigation', 'melange' ) ); ?>
+		<?php next_comments_link( _x( 'Next &rarr;', 'comments navigation', 'marsh' ) ); ?>
 
 	</nav>
 

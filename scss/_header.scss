@@ -8,10 +8,10 @@
 
 // Header
 .site-header {
-    background: $grayDarker;
-    position: relative;
+    background: transparent;
+    position: absolute;
     width: 100%;
-    padding: 21px 0;
+    
     z-index: 1000;
     //height: 90px;
 
@@ -22,6 +22,18 @@
     .admin-bar & {
         border-top: 1px solid lighten($grayDarker, 2%);
     }
+
+    @include mq($mobileNavWidth) {
+        padding: 21px 0;
+    }
+}
+
+.branding {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1em;
+    max-width: $containerWidth;
+    position: relative;
 }
 
 
@@ -29,16 +41,20 @@
     margin: 0;
 
     a {
-        
         @include hide-text;
         display: block;
-        background: url(img/icons/rwc-logo.svg) center center no-repeat;
-        background-size: 200px 47px;
-        width: 200px;
-        height: 47px;
+        background: url(img/icons/marsh-painting.svg) center center no-repeat;
+        background-size: 90px 72px;
+        width: 150px;
+        height: 120px;
         position: relative;
         margin: 0;
         z-index: 1000;
-    
+
+        @include mq(640) {
+            background-size: 150px 120px;
+        width: 150px;
+        height: 120px;
+        }
     }
 }

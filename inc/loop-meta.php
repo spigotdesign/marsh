@@ -1,39 +1,31 @@
-<?php $customHeader = get_header_image(); ?>
+<?php if ( is_page() || is_singular('post') || is_category() || is_tag() ) { ?>
 
-<?php if ( is_page() && !in_array( hybrid_get_theme_layout(), array( '1c' ) ) && has_post_thumbnail() ) { ?>
+	<?php if ( has_post_thumbnail() ) { ?>
 
-	<?php $bgimage = get_the_image(array('format' => 'array', 'size' => 'full' )); ?>
+		<?php $bgimage = get_the_image(array('format' => 'array', 'size' => 'full' )); ?>
+		<?php $bgimage = $bgimage[src]; ?>
 
-	<header class="page-header" style="background-image: url(<?php echo $bgimage[src]; ?>);">
+	<?php } else { ?>
 
-		<h1 <?php hybrid_attr( 'entry-title' ); ?>><?php single_post_title(); ?></h1>
+		<?php $images = get_field('header_images', 'option'); ?>
+		<?php $rand = array_rand($images, 1); ?>
+		<?php $bgimage = $images[$rand]['url']; ?>
+
+	<?php } ?>
+
+	<header class="page-marquee" style="background-image: url(<?php echo $bgimage; ?>);">
+
+		<div class="contain">
+
+			<h1 <?php hybrid_attr( 'entry-title' ); ?>>
+				<?php single_post_title(); ?>
+				<?php single_cat_title(); ?>
+				<?php single_tag_title(); ?>
+			</h1>
+
+		</div>
 
 	</header>
-
-
-<?php } elseif ( is_category() ) { ?>
-
-<header class="page-header" style="background-image: url(<?php echo $customHeader; ?>);">
-
-	<h1 class="page-title category-title"><span><?php single_cat_title(); ?></span></h1>
-
-	<div class="loop-description category-description">
-		<?php echo category_description(); ?>
-	</div>
-
-</header>
-
-<?php } elseif ( is_tag() ) { ?>
-
-<header class="page-header" style="background-image: url(<?php echo $customHeader; ?>);">
-
-	<h1 class="page-title tag-title"><span><?php single_tag_title(); ?></span></h1>
-
-	<div class="loop-description tag-description">
-		<?php echo tag_description(); ?>
-	</div>
-
-</header>
 
 <?php } elseif ( is_tax() ) { ?>
 
@@ -62,7 +54,7 @@
 	<h1 class="page-title search-title"><span><?php echo esc_attr( get_search_query() ); ?></span></h1>
 
 	<div class="loop-description search-description">
-		<?php echo wpautop( sprintf( __( 'You are browsing the search results for "%s"', 'melange' ), esc_attr( get_search_query() ) ) ); ?>
+		<?php echo wpautop( sprintf( __( 'You are browsing the search results for "%s"', 'marsh' ), esc_attr( get_search_query() ) ) ); ?>
 	</div>
 
 </header>
@@ -79,34 +71,33 @@
 
 <?php } elseif ( is_day() || is_month() || is_year() ) { ?>
 
+<?php $images = get_field('header_images', 'option'); ?>
+		<?php $rand = array_rand($images, 1); ?>
+		<?php $bgimage = $images[$rand]['url']; ?>
+
 	<?php
 		if ( is_day() )
-			$date = get_the_time( __( 'F d, Y', 'melange' ) );
+			$date = get_the_time( __( 'F d, Y', 'marsh' ) );
 		elseif ( is_month() )
-			$date = get_the_time( __( 'F Y', 'melange' ) );
+			$date = get_the_time( __( 'F Y', 'marsh' ) );
 		elseif ( is_year() )
-			$date = get_the_time( __( 'Y', 'melange' ) );
+			$date = get_the_time( __( 'Y', 'marsh' ) );
 	?>
 
-	<header class="page-header" style="background-image: url(<?php echo $customHeader; ?>);">
 
-		<h1 class="page-title date-title"><span><?php echo $date; ?></span></h1>
+		<header class="page-marquee" style="background-image: url(<?php echo $bgimage; ?>);">
 
-		<div class="loop-description date-description">
-			<?php echo wpautop( sprintf( __( 'You are browsing the site archives for %s.', 'melange' ), $date ) ); ?>
+		<div class="contain">
+
+			<h1 <?php hybrid_attr( 'entry-title' ); ?>><?php echo $date; ?></h1>
+			<p>You're browsing the archives for <?php echo $date; ?></p>
+
 		</div>
 
 	</header>
 
-<?php } elseif ( is_archive() ) { ?>
+	</header>
 
-<header class="page-header" style="background-image: url(<?php echo $customHeader; ?>);">
 
-	<h1 class="page-title archive-title"><span><?php _e( 'Archives', 'melange' ); ?></span></h1>
-
-	<div class="loop-description archive-description">
-		<?php echo wpautop( __( 'You are browsing the site archives.', 'melange' ) ); ?>
-	</div>
-</header>
 
 <?php } // End if check ?>

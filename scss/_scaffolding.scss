@@ -7,7 +7,7 @@
  */
 
 *, *:before, *:after {
-    @include box-sizing(border-box);
+    box-sizing: border-box;
 }
 
 html {
@@ -52,7 +52,7 @@ body {
 }
 
 .page-contents {
-    .layout-2c-l & {
+    
         padding: 0 2%;
 
         @include mq(1120) {
@@ -76,7 +76,7 @@ body {
         .sidebar-primary {
             flex: 0 1 30%;
         }
-    }
+    
 }
 
 .no-flexbox {

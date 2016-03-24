@@ -22,8 +22,8 @@
 		</div>
 
 		<footer class="entry-footer">
-			<?php hybrid_post_terms( array( 'taxonomy' => 'category', 'text' => __( 'Posted in %s', 'melange' ) ) ); ?>
-			<?php hybrid_post_terms( array( 'taxonomy' => 'post_tag', 'text' => __( 'Tagged %s', 'melange' ), 'before' => '<br />' ) ); ?>
+			<?php hybrid_post_terms( array( 'taxonomy' => 'category', 'text' => __( 'Posted in %s', 'marsh' ) ) ); ?>
+			<?php hybrid_post_terms( array( 'taxonomy' => 'post_tag', 'text' => __( 'Tagged %s', 'marsh' ), 'before' => '<br />' ) ); ?>
 		</footer>
 
 	<?php else : // If not viewing a single post. ?>
@@ -47,7 +47,7 @@
 		<div <?php hybrid_attr( 'entry-summary' ); ?>>
 			<?php the_excerpt(); ?>
 			<?php $count = hybrid_get_gallery_item_count(); ?>
-			<p class="gallery-count"><?php printf( _n( 'This gallery contains %s item.', 'This gallery contains %s items.', $count, 'melange' ), $count ); ?></p>
+			<p class="gallery-count"><?php printf( _n( 'This gallery contains %s item.', 'This gallery contains %s items.', $count, 'marsh' ), $count ); ?></p>
 		</div>
 
 	<?php endif; // End single post check. ?>

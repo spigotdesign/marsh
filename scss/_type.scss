@@ -181,3 +181,17 @@ sup, sub {
    padding: 0 .125em;
 }
 sub { top: 0.4em; }
+
+dl {
+  dt {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 110%;
+
+  }
+
+  dd {
+    margin-left: 20px;
+    margin-bottom: 24px;
+  }
+}

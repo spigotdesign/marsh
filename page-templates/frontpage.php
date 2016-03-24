@@ -16,22 +16,29 @@ get_header(); ?>
 
 	<?php the_post(); // Loads the post data. ?>
 
-	<div class="page-contents">
+	<?php $bgimage = get_the_image(array('format' => 'array', 'size' => 'full' )); ?>
 
-		<?php $bgimage = get_the_image(array('format' => 'array', 'size' => 'full' )); ?>
+	<div class="page-marquee" style="background-image: url(<?php echo $bgimage[src]; ?>);">
 
-		<section class="marquee" style="background-image: url(<?php echo $bgimage[src]; ?>);">
+		<div class="contain">
 
-			<div class="contain">
+			<h1><?php the_field('main_headline'); ?></h1>
 
-				<?php the_content(); ?>
+			<h2><span><?php the_field('sub_headline'); ?></h2>
 
-			</div>
-
-		</section>
-
+		</div>
 
 	</div>
+
+	<div class="page-contents">
+
+		<article <?php hybrid_attr( 'post' ); ?>>
+
+			<?php the_content(); ?>
+
+		</article>
+
+	
 
 <?php endwhile; // End found posts loop. ?>
 

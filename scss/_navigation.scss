@@ -12,22 +12,25 @@
     visibility: hidden;
     width: 100%;
     right: 0;
-    top: 5.25em;
+    top: 0;
+    padding-top: 8em;
+    padding-bottom: 2em;
     margin-bottom: 2em;
-    background: $grayDark;
+    background: rgba($black, .9);
     font-family: $primaryNavFontFamily;
 
     @include transition(all 0.3s ease-in-out);
 
     // MQ
     @include mq($mobileNavWidth) {
-        position: relative;
+        position: absolute;
         margin: 0;
-        background: transparent;
+        background: rgba(20, 19, 19, .63);
         text-align: right;
         opacity: 1;
         visibility: visible;
-        top: 1em;
+        top: 3.5em;
+        padding: .25em;
     }
 
 
@@ -36,10 +39,9 @@
         width: 100%;
         overflow: hidden;
         visibility: visible;
+        text-align: center;
 
-        @include mq(480) {
-            top: 5.25em;
-        }
+        
     }
 
     ul {
@@ -47,17 +49,19 @@
         margin: 0;
         padding: 0;
         list-style: none;
+        max-width: $containerWidth;
+        margin: 0 auto;
+
 
         li {
             padding: 0;
             margin: 0;
-            font-size: 14px;
-            font-size: .875rem;
+            @include font_size(16px);
             position: relative;
             text-transform: uppercase;
 
             @include mq($mobileNavWidth) {
-                padding-bottom: 1em;
+                
                 display: inline-block;
             }
 
@@ -104,7 +108,7 @@
                 @include mq($mobileNavWidth) {
                     color: $white;
                     display: inline-block;
-                    padding: 0 .5em;
+                    padding: .5em;
                 }
             }
 

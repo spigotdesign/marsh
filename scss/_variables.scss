@@ -51,7 +51,7 @@ $toolTipTextColor:		$white;
 // Typography
 
 $sansFontFamily:		"Open Sans", Helvetica, sans-serif;
-$serifFontFamily:		Helvetica, serif;
+$serifFontFamily:		'Merriweather', serif;
 $monoFontFamily:        Menlo, Monaco, Consolas, "Courier New", monospace;
 $iconFontFamily:        "icomoon";
 
@@ -65,7 +65,7 @@ $regFontWeight:			400;
 $lightFontWeight:		300;
 
 // Headings
-$headingsFontFamily:    $sansFontFamily;
+$headingsFontFamily:    $serifFontFamily;
 $headingsFontWeight:    lighter;
 $headingsColor:         $black;
 
